@@ -1,0 +1,47 @@
+body {
+    background-image: url("../background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    font-family: 'Batman Forever';
+    background-color: rgba(128, 128, 128, 0.5);
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.titulo {
+    font-size: xx-large;
+}
+
+.cartao {
+    /* background-color: linear-gradient(rgba(255, 0, 0, 0), rgba(255, 255, 255, 1)); */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.30), rgba(255,255,255,0));
+
+}
+
+.digita-pokemon {
+    border-width: 0px;
+    font-size: 100px;
+    -webkit-text-stroke: 7.5px;
+    -webkit-text-stroke-color: #3f6ab4;
+    text-shadow: -10px 10px 0px #245699;
+    font-family: 'Pokemon Solid';
+    color: #f9cd16;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.botao {
+    font-size: 50px;
+}
+
+.imagem-pokemon {
+    width: 20%;
+    margin-left: 50px;
+}
+
+@font-face {
+    font-family: 'Batman Forever';
+    src: url('batmanforever.ttf')  format('truetype')
+  }

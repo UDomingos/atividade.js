@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Superhero</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="row mb-5">
+            <div class="col-12 titulo justify-content-center">SUPER HERO'S TRUNFO</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12 justify-content-center">
+                <button class="button" onclick="sortear()">Sortear</button>
+            </div>
+        </div>
+        <div id="divCartas" class="row mb-3">
+            <div class="col-4 offset-1 card bg-light.bg-gradient" id="JdivImagem" style="background-image: url('https://www.superherodb.com/pictures2/portraits/10/100/639.jpg');">
+                <div class="card-body cartao">
+                    <h5 class="card-title titulo mt-5">Jogador</h5>
+                    <p class="card-text" id="Jheroi">Batman</p>
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Jintelligence" autocomplete="off" onclick="fazerJogada(this)">
+                        <label class="btn btn-secondary" for="Jintelligence" id="JTintelligence">Inteligência: 100</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Jstrength" autocomplete="off" onclick="fazerJogada(this)">
+                        <label class="btn btn-secondary" for="Jstrength" id="JTstrength">Força: 26</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Jspeed" autocomplete="off" onclick="fazerJogada(this)">
+                        <label class="btn btn-secondary" for="Jspeed" id="JTspeed">Velocidade: 27</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Jdurability" autocomplete="off" onclick="fazerJogada(this)">
+                        <label class="btn btn-secondary" for="Jdurability" id="JTdurability">Durabilidade: 50</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Jpower" autocomplete="off" onclick="fazerJogada(this)">
+                        <label class="btn btn-secondary" for="Jpower" id="JTpower">Poder: 47</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Jcombat" autocomplete="off" onclick="fazerJogada(this)">
+                        <label class="btn btn-secondary" for="Jcombat" id="JTcombat">Combate: 100</label>
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-2 align-items-center d-flex justify-content-center titulo">
+                VS
+            </div>
+            <div class="col-4 card bg-light.bg-gradient" id="CdivImagem" style="background-image: url('https://www.superherodb.com/pictures2/portraits/10/100/639.jpg');">
+                <div class="card-body cartao">
+                    <h5 class="card-title titulo mt-5">CPU</h5>
+                    <p class="card-text" id="Cheroi">Batman</p>
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Cintelligence" autocomplete="off">
+                        <label class="btn btn-secondary" for="Cintelligence" id="CTintelligence">Inteligência: 100</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Cstrength" autocomplete="off">
+                        <label class="btn btn-secondary" for="Cstrength" id="CTstrength">Força: 26</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Cspeed" autocomplete="off">
+                        <label class="btn btn-secondary" for="Cspeed" id="CTspeed">Velocidade: 27</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Cdurability" autocomplete="off">
+                        <label class="btn btn-secondary" for="Cdurability" id="CTdurability">Durabilidade: 50</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Cpower" autocomplete="off">
+                        <label class="btn btn-secondary" for="Cpower" id="CTpower">Poder: 47</label>
+                    </p>
+
+                    <p class="card-text">
+                        <input type="radio" class="btn-check" name="options" id="Ccombat" autocomplete="off">
+                        <label class="btn btn-secondary" for="Ccombat" id="CTcombat">Combate: 100</label>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div id="divMensagem" class="row">
+            <div class="col-12 align-items-center d-flex">Clique em um ponto de estatística e veja se venceu</div>
+        </div>
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            
+    <script type="text/javascript">
+        var jsCPU;
+        var jsPlayer;
+
+        function fazerJogada(radio) {
+            exibirAtributos("C", jsCPU);
+
+            // Estava aparecendo o alert antes de exibir os atributos, então colocamos um delay
+            setTimeout(function(){
+                switch(radio.id) {
+                    case "Jintelligence":
+                        validaJogada(jsPlayer.powerstats.intelligence, jsCPU.powerstats.intelligence);
+                        break;
+                    case "Jstrength":
+                        validaJogada(jsPlayer.powerstats.strength, jsCPU.powerstats.strength);
+
+                        break;
+                    case "Jspeed":
+                        validaJogada(jsPlayer.powerstats.speed, jsCPU.powerstats.speed);
+
+                        break;
+                    case "Jdurability":
+                    validaJogada(jsPlayer.powerstats.durability, jsCPU.powerstats.durability);
+
+                        break;
+                    case "Jpower":
+                        validaJogada(jsPlayer.powerstats.power, jsCPU.powerstats.power);
+
+                        break;
+                    case "Jcombat":
+                        validaJogada(jsPlayer.powerstats.combat, jsCPU.powerstats.combat);
+
+                        break;
+                    
+                }
+            }, 100)
+            
+        }
+        function validaJogada(attrPlayer, attrCPU) {
+            if (parseInt(attrPlayer) == parseInt(attrCPU)) {
+                alert("Deu empate");
+            } else if (parseInt(attrPlayer) > parseInt(attrCPU)) {
+                alert("Você venceu");
+            } else {
+                alert("Derrotado");
+            }
+        }
+
+        function exibirAtributos(tipo, jsJC) {
+            $("#" + tipo + "Tintelligence").text("Inteligência: " + jsJC.powerstats.intelligence);
+            $("#" + tipo + "Tstrength").text("Força: " + jsJC.powerstats.strength);
+            $("#" + tipo + "Tspeed").text("Velocidade: " + jsJC.powerstats.speed);
+            $("#" + tipo + "Tdurability").text("Durabilidade: " + jsJC.powerstats.durability);
+            $("#" + tipo + "Tpower").text("Poder: " + jsJC.powerstats.power);
+            $("#" + tipo + "Tcombat").text("Combate: " + jsJC.powerstats.combat);
+        }
+
+        function ocultaAtributos(tipo) {
+            $("#" + tipo + "Tintelligence").text("Inteligência: ???");
+            $("#" + tipo + "Tstrength").text("Força: ???");
+            $("#" + tipo + "Tspeed").text("Velocidade: ???");
+            $("#" + tipo + "Tdurability").text("Durabilidade: ???");
+            $("#" + tipo + "Tpower").text("Poder: ???");
+            $("#" + tipo + "Tcombat").text("Combate: ???");
+        }
+
+        function sortear() {
+            preenche("J");
+            preenche("C");
+        };
+        
+        function preenche(tipo) {
+            url = 'https://www.superheroapi.com/api.php/4688831304514062/' + (1 + Math.floor(Math.random() * 731));
+            
+            $.getJSON(url, function(dados) {
+
+                if (!("error" in dados)) {
+                    // Alguns herois não tem todos os atributos, então sorteia de novo
+                    if (dados.powerstats.intelligence == 'null' ||
+                        dados.powerstats.strength == 'null' ||
+                        dados.powerstats.speed == 'null' ||
+                        dados.powerstats.durability == 'null' ||
+                        dados.powerstats.power == 'null' ||
+                        dados.powerstats.combat == 'null') {
+                        preenche(tipo);
+                    }
+                    if (tipo == "J") {
+                        jsPlayer = dados;
+                        exibirAtributos(tipo, jsPlayer);
+                    } else {
+                        jsCPU = dados;
+                        ocultaAtributos(tipo);
+                    }
+                    
+                    // Exibe a imagem da carta
+                    $("#" + tipo + "divImagem").attr("style", "background-image: url('" + dados.image.url+ "');");
+
+                    // Atualiza o nome do herói
+                    $("#" + tipo + "heroi").text(dados.name);
+                }
+                else {
+                    // Se não achou, consulta com outro id
+                    preenche(tipo);
+                }
+            });
+        }
+    
+    </script>
+</body>
+
+</html>
